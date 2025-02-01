@@ -1,16 +1,22 @@
-# Neumorph.scss
+# Neufork
+
+----
+## Neufork
+Neufork is a fork of [Neumorph.scss](https://github.com/ChemaAlfonso/neumorph.scss/tree/master), providing a few extra features and a couple of small style tweaks.
+
+> You can check out the list of changes [here](changes.md).
 
 ----
 ## what is Neumorph.scss?
-see [demo page](https://chemaalfonso.github.io/neumorph.scss/)
+Check out the Neufork [demo page](https://omer-sm.github.io/neumorph.scss/)
 
 > Neumorph.scss is a bundle of bootstrap 4 styles integrated with neumorphism.scss clases to make a simple soft design.
 
 ----
 ## Getting started
-Neumorph.scss brings you a layer you can use between bootstrap and your styles.
+Neumorphed.scss brings you a layer you can use between bootstrap and your styles.
 
-You only need to **import one of the variations** stylesheets on your proyect or **compile your own** and start writting clases at html elements, like you usually do with bootstrap.
+You only need to **import one of the variations** stylesheets on your project or **compile your own** and start writting clases at html elements, like you usually do with bootstrap.
 
 ----
 ## Variations
@@ -53,4 +59,4 @@ $ npm run sass-custom-min
 You can import this file to your project and start working with it.
 
 ## ATENTION - Pre-release, use with caution.
-This is a personal use micro library builded to work by myself that i wanted to share, use it by your own responsability.
+There will probably be bugs.

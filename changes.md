@@ -4,6 +4,8 @@
 ## Colors
 - Made accent color subtler.
 
+- Made background colors subtler.
+
 ----
 ## Shadows
 - Decreased shadow spread across all elements.

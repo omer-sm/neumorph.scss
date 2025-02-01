@@ -682,25 +682,25 @@ div{
         }
 
         &-primary{      
-            background: $primary; 
+            background: mix($primary, $background, $bg-mix); 
         }
         &-success{      
-            background: $success; 
+            background: mix($success, $background, $bg-mix);
         }
         &-accent{      
-            background: $accent; 
+            background: mix($accent, $background, $bg-mix);
         }
         &-warn{      
-            background: $warn; 
+            background: mix($warn, $background, $bg-mix); 
         }
         &-warning{      
-            background: $warning; 
+            background: mix($warning, $background, $bg-mix); 
         }
         &-info{      
-            background: $info; 
+            background: mix($info, $background, $bg-mix); 
         }
         &-secondary{      
-            background: $secondary; 
+            background: mix($secondary, $background, $bg-mix); 
         }
         &-dark{      
             background: $dark; 

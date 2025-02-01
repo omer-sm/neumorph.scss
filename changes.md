@@ -21,3 +21,5 @@
 ----
 ## Checkboxes
 - Gave checkboxes a different shadow on hover.
+
+- Added np-check-\[color\] classes, which when applied to a label give it the specified color when checked.

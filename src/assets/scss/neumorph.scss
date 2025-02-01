@@ -541,6 +541,7 @@ div{
                 position: relative;
                 overflow: hidden;
                 cursor: pointer;
+                transition: all $transition-time;
 
                 &::before {
                     @include basic-element;
@@ -566,6 +567,30 @@ div{
             &:checked ~ label {
                 &::before {
                     @include np-shadow-inverse;
+                }
+
+                &.np-check-primary{
+                    color: $primary;
+                }
+
+                &.np-check-accent{
+                    color: $accent;
+                }
+
+                &.np-check-secondary{
+                    color: $secondary;
+                }
+
+                &.np-check-warn{
+                    color: $warn;
+                }
+
+                &.np-check-warning{
+                    color: $warning;
+                }
+
+                &.np-check-success{
+                    color: $success;
                 }
             }
         }

@@ -5,24 +5,24 @@
 /*========================
  Light theme
 ========================*/
-// $primary:      #3066BE !default;
-// $success:      #F4D58D !default;
-// $accent:       #E6AF2E !default;
-// $warn:         #D72638 !default;
-// $light:        rgba(255, 255, 255, 1) !default;
-// $foreground:   #1f2224 !default;
-// $background:   rgba(242,243,247, 1) !default;
-// $shadow:       rgba(221, 228, 239, 1) !default;
-// $shadow-light: rgba(255, 255, 255, 1) !default;
-// $dark:          $dark !default;
-// $warning:       $warning !default;
-// $info:          $info !default;
-// $secondary:     $secondary !default;
+$primary:      #3066BE !default;
+$success:      rgb(143, 215, 95) !default;
+$accent:       #E6AF2E !default;
+$warn:         #D72638 !default;
+$light:        rgba(255, 255, 255, 1) !default;
+$foreground:   #1f2224 !default;
+$background:   rgba(242,243,247, 1) !default;
+$shadow:       rgba(221, 228, 239, 1) !default;
+$shadow-light: rgba(255, 255, 255, 0.8) !default;
+$dark:          $dark !default;
+$warning:       $warning !default;
+$info:          $info !default;
+$secondary:     $secondary !default;
 
 /*========================
  Night theme
 ========================*/
-$primary:      #3066BE !default;
+/*$primary:      #3066BE !default;
 $success:      rgb(175, 232, 138, 1) !default;
 $accent:       #e4d5b3 !default;
 $warn:         #D72638 !default;
@@ -34,7 +34,7 @@ $shadow-light: rgba(40, 40, 40, 0.801) !default;
 $dark:          $dark !default;
 $warning:       $warning !default;
 $info:          $info !default;
-$secondary:     $secondary !default;
+$secondary:     $secondary !default;*/
 
 
 /*====================================

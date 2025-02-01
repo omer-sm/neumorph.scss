@@ -265,9 +265,15 @@ div{
         @include np-shadow; 
         &-inverse{      
             @include np-shadow-inverse; 
+            &-less{
+                @include np-shadow-inverse-decrease();
+            }
         }
         &-double{      
             @include np-shadow-double(); 
+        }
+        &-less{
+            @include np-shadow-decrease();
         }
         &-border-square{      
             @include np-shadow();
@@ -362,7 +368,11 @@ div{
         &:hover{ 
             @include np-shadow-inverse;  
             font-size: $text-decrease;
-        } 
+        }
+        &-less:hover{
+            @include np-shadow-inverse-decrease();  
+            font-size: $text-decrease;
+        }
     }
      
     &-hover-inverse{ 
@@ -371,6 +381,10 @@ div{
             @include np-shadow;  
             font-size: $text-increase; 
         } 
+        &-less:hover{
+            @include np-shadow-decrease();  
+            font-size: $text-increase; 
+        }
     }
 
     /*=================

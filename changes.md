@@ -10,6 +10,8 @@
 ## Shadows
 - Decreased shadow spread across all elements.
 
+- Added np-shadow-less, np-hover-less, np-shadow-inverse-less and np-hover-inverse-less classes which give subtler shadows.
+
 ----
 ## Buttons
 - Made buttons deactivate when no longer pressed.

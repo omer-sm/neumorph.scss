@@ -34,37 +34,40 @@
 }
 
 @mixin np-shadow {
-    box-shadow: 6px 6px 16px 0px $shadow, -6px -6px 16px 0px $shadow-light, inset 0px 0px 0px 0px $shadow, inset  0px 0px 0px 0px $shadow-light;
+    box-shadow: $shadow-spread $shadow-spread $shadow-blur 0px $shadow, (-$shadow-spread) (-$shadow-spread) $shadow-blur 0px $shadow-light, 
+        inset 0px 0px 0px 0px $shadow, inset  0px 0px 0px 0px $shadow-light;
 }
 
 @mixin np-shadow-decrease {
-    $a: 6px * $shadow-decrease-factor;
-    $b: -$a;
-    $blur: 16px * $shadow-decrease-factor;
-    box-shadow: $a $a $blur 0px $shadow, $b $b $blur 0px $shadow-light, inset 0px 0px 0px 0px $shadow, inset  0px 0px 0px 0px $shadow-light;
+    $a: $shadow-spread * $shadow-decrease-factor;
+    $blur: $shadow-blur* $shadow-decrease-factor;
+    box-shadow: $a $a $blur 0px $shadow, (-$a) (-$a) $blur 0px $shadow-light, inset 0px 0px 0px 0px $shadow, inset  0px 0px 0px 0px $shadow-light;
 }
 
 @mixin np-shadow-inverse {
-    box-shadow: 0px 0px 0px 0px $shadow, 0px 0px 0px 0px $shadow-light, inset 6px 6px 16px 0px $shadow, inset  -6px -6px 16px 0px $shadow-light;
+    box-shadow: 0px 0px 0px 0px $shadow, 0px 0px 0px 0px $shadow-light, 
+        inset $shadow-spread $shadow-spread $shadow-blur 0px $shadow, inset (-$shadow-spread) (-$shadow-spread) $shadow-blur 0px $shadow-light;
 }
 
 @mixin np-shadow-inverse-decrease {
-    $a: 6px * $shadow-decrease-factor;
-    $b: -$a;
-    $blur: 16px * $shadow-decrease-factor;
-    box-shadow: 0px 0px 0px 0px $shadow, inset  0px 0px 0px 0px $shadow-light, inset $a $a $blur 0px $shadow, inset $b $b $blur 0px $shadow-light;
+    $a: $shadow-spread * $shadow-decrease-factor;
+    $blur: $shadow-blur* $shadow-decrease-factor;
+    box-shadow: 0px 0px 0px 0px $shadow, 0px 0px 0px 0px $shadow-light, inset $a $a $blur 0px $shadow, inset (-$a) (-$a) $blur 0px $shadow-light;
 }
 
 @mixin np-shadow-double {
-    box-shadow: 6px 6px 16px 0px $shadow, -6px -6px 16px 0px $shadow-light, inset 6px 6px 16px 0px $shadow, inset  -6px -6px 16px 0px $shadow-light;
+    box-shadow: $shadow-spread $shadow-spread $shadow-blur 0px $shadow, (-$shadow-spread) (-$shadow-spread) $shadow-blur 0px $shadow-light, 
+        inset $shadow-spread $shadow-spread $shadow-blur 0px $shadow, inset (-$shadow-spread) (-$shadow-spread) $shadow-blur 0px $shadow-light;
 }
 
 @mixin np-text-shadow {
-    text-shadow: 6px 6px 16px 0px $shadow, -6px -6px 16px 0px $shadow-light, inset 0px 0px 0px 0px $shadow, inset  0px 0px 0px 0px $shadow-light;
+    text-shadow: $shadow-spread $shadow-spread $shadow-blur 0px $shadow, (-$shadow-spread) (-$shadow-spread) $shadow-blur 0px $shadow-light,
+        inset 0px 0px 0px 0px $shadow, inset 0px 0px 0px 0px $shadow-light;
 }
 
 @mixin np-text-shadow-inverse {
-    text-shadow: 0px 0px 0px 0px $shadow, 0px 0px 0px 0px $shadow-light, inset 6px 6px 16px 0px $shadow, inset  -6px -6px 16px 0px $shadow-light;
+    text-shadow: 0px 0px 0px 0px $shadow, 0px 0px 0px 0px $shadow-light, 
+        inset $shadow-spread $shadow-spread $shadow-blur 0px $shadow, inset (-$shadow-spread) (-$shadow-spread) $shadow-blur 0px $shadow-light;
 }
 
 @mixin basic-element {
@@ -541,7 +544,7 @@ div{
 
                 &:hover {
                     &::before {
-                        @include np-shadow-double;
+                        @include np-shadow-inverse-decrease();
                     }
                 }
             }

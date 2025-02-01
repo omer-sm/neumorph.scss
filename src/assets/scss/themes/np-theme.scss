@@ -58,4 +58,6 @@ $transition-time: .3s;
 /*====================================
  Shadows
 =====================================*/
-$shadow-decrease-factor: 0.6;
+$shadow-spread: 6px * 0.8;
+$shadow-blur: 16px * 0.8;
+$shadow-decrease-factor: 0.5;

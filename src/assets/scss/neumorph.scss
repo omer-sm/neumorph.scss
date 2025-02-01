@@ -387,6 +387,62 @@ div{
         }
     }
 
+    &-active{
+        transition: all $transition-time;
+
+        &-primary:active{
+            color: $primary !important;
+        }
+
+        &-accent:active{
+            color: $accent !important;
+        }
+
+        &-secondary:active{
+            color: $secondary !important;
+        }
+
+        &-warn:active{
+            color: $warn !important;
+        }
+
+        &-warning:active{
+            color: $warning !important;
+        }
+
+        &-success:active{
+            color: $success !important;
+        }
+    }
+
+    &-focus{
+        transition: all $transition-time;
+
+        &-primary:focus{
+            color: $primary !important;
+        }
+
+        &-accent:focus{
+            color: $accent !important;
+        }
+
+        &-secondary:focus{
+            color: $secondary !important;
+        }
+
+        &-warn:focus{
+            color: $warn !important;
+        }
+
+        &-warning:focus{
+            color: $warning !important;
+        }
+
+        &-success:focus{
+            color: $success !important;
+        }
+    }
+
     /*=================
      Buttons
     ==================*/

@@ -13,6 +13,10 @@
 - Added np-shadow-less, np-hover-less, np-shadow-inverse-less and np-hover-inverse-less classes which give subtler shadows.
 
 ----
+## Inputs
+- Added np-focus-\[color\] and np-active-\[color\] classes, which give the input's text the specified color when focused / active (accordingly).
+
+----
 ## Buttons
 - Made buttons deactivate when no longer pressed.
 

@@ -1,7 +1,8 @@
 /*!
- * Neumorph.scss v4.4.1 (https://chemaalfonso.com/)
+ * Neufork v4.4.1
  * Copyright 2020 Chema Alfonso
- * Licensed under MIT (https://github.com/ChemaAlfonso/neumorph.scss/blob/master/LICENSE)
+ * Copyright 2025 Omer Smorodinsky
+ * Licensed under MIT (https://github.com/omer-sm/neumorph.scss/blob/master/LICENSE)
  */
   
 /*====================================
@@ -34,23 +35,40 @@
 }
 
 @mixin np-shadow {
-    box-shadow: 6px 6px 16px 0px $shadow, -6px -6px 16px 0px $shadow-light, inset 0px 0px 0px 0px $shadow, inset  0px 0px 0px 0px $shadow-light;
+    box-shadow: $shadow-spread $shadow-spread $shadow-blur 0px $shadow, (-$shadow-spread) (-$shadow-spread) $shadow-blur 0px $shadow-light, 
+        inset 0px 0px 0px 0px $shadow, inset  0px 0px 0px 0px $shadow-light;
+}
+
+@mixin np-shadow-decrease {
+    $a: $shadow-spread * $shadow-decrease-factor;
+    $blur: $shadow-blur* $shadow-decrease-factor;
+    box-shadow: $a $a $blur 0px $shadow, (-$a) (-$a) $blur 0px $shadow-light, inset 0px 0px 0px 0px $shadow, inset  0px 0px 0px 0px $shadow-light;
 }
 
 @mixin np-shadow-inverse {
-    box-shadow: 0px 0px 0px 0px $shadow, 0px 0px 0px 0px $shadow-light, inset 6px 6px 16px 0px $shadow, inset  -6px -6px 16px 0px $shadow-light;
+    box-shadow: 0px 0px 0px 0px $shadow, 0px 0px 0px 0px $shadow-light, 
+        inset $shadow-spread $shadow-spread $shadow-blur 0px $shadow, inset (-$shadow-spread) (-$shadow-spread) $shadow-blur 0px $shadow-light;
+}
+
+@mixin np-shadow-inverse-decrease {
+    $a: $shadow-spread * $shadow-decrease-factor;
+    $blur: $shadow-blur* $shadow-decrease-factor;
+    box-shadow: 0px 0px 0px 0px $shadow, 0px 0px 0px 0px $shadow-light, inset $a $a $blur 0px $shadow, inset (-$a) (-$a) $blur 0px $shadow-light;
 }
 
 @mixin np-shadow-double {
-    box-shadow: 6px 6px 16px 0px $shadow, -6px -6px 16px 0px $shadow-light, inset 6px 6px 16px 0px $shadow, inset  -6px -6px 16px 0px $shadow-light;
+    box-shadow: $shadow-spread $shadow-spread $shadow-blur 0px $shadow, (-$shadow-spread) (-$shadow-spread) $shadow-blur 0px $shadow-light, 
+        inset $shadow-spread $shadow-spread $shadow-blur 0px $shadow, inset (-$shadow-spread) (-$shadow-spread) $shadow-blur 0px $shadow-light;
 }
 
 @mixin np-text-shadow {
-    text-shadow: 6px 6px 16px 0px $shadow, -6px -6px 16px 0px $shadow-light, inset 0px 0px 0px 0px $shadow, inset  0px 0px 0px 0px $shadow-light;
+    text-shadow: $shadow-spread $shadow-spread $shadow-blur 0px $shadow, (-$shadow-spread) (-$shadow-spread) $shadow-blur 0px $shadow-light,
+        inset 0px 0px 0px 0px $shadow, inset 0px 0px 0px 0px $shadow-light;
 }
 
 @mixin np-text-shadow-inverse {
-    text-shadow: 0px 0px 0px 0px $shadow, 0px 0px 0px 0px $shadow-light, inset 6px 6px 16px 0px $shadow, inset  -6px -6px 16px 0px $shadow-light;
+    text-shadow: 0px 0px 0px 0px $shadow, 0px 0px 0px 0px $shadow-light, 
+        inset $shadow-spread $shadow-spread $shadow-blur 0px $shadow, inset (-$shadow-spread) (-$shadow-spread) $shadow-blur 0px $shadow-light;
 }
 
 @mixin basic-element {
@@ -104,32 +122,43 @@ button.np-btn:focus,
 .np-circle-md:focus,
 .np-circle-lg:focus,
 .np-circle-xl:focus,
-.np-circle-xxl:focus {
-    outline: none;
-    @include np-shadow-inverse; 
-}
-
-button.np-btn:focus,
-.np-btn:focus,
-.np-square-sm:focus,
-.np-square-md:focus,
-.np-square-lg:focus,
-.np-square-xl:focus,
-.np-square-xxl:focus,
-.np-circle-sm:focus,
-.np-circle-md:focus,
-.np-circle-lg:focus,
-.np-circle-xl:focus,
-.np-circle-xxl:focus {
-    font-size: $text-decrease;
-}
-
+.np-circle-xxl:focus,
 .np-shadow-inverse:focus {
     outline: none;
-    @include np-shadow; 
-    font-size: $text-increase;
 }
 
+input.np-element:focus,
+select.np-element:focus,
+textarea.np-element:focus,
+textarea.np-form-element:focus,
+input.np-form-element:focus,
+select.np-form-element:focus {
+    @include np-shadow-inverse; 
+    color: $accent;
+}
+
+button.np-btn:active,
+.np-btn:active,
+.np-square-sm:active,
+.np-square-md:active,
+.np-square-lg:active,
+.np-square-xl:active,
+.np-square-xxl:active,
+.np-circle-sm:active,
+.np-circle-md:active,
+.np-circle-lg:active,
+.np-circle-xl:active,
+.np-circle-xxl:active {
+    font-size: $text-decrease;
+    @include np-shadow-inverse; 
+    color: $accent;
+}
+
+.np-shadow-inverse:active {
+    @include np-shadow; 
+    font-size: $text-increase;
+    color: $accent;
+}
 
 /*========================
  General
@@ -173,7 +202,7 @@ a{
         padding-top: 0;
         transition: all $transition-time;
         &:hover{
-            @include np-shadow-inverse;
+            @include np-shadow-inverse-decrease;
             color: $accent;
             background: $background;
         }
@@ -237,9 +266,15 @@ div{
         @include np-shadow; 
         &-inverse{      
             @include np-shadow-inverse; 
+            &-less{
+                @include np-shadow-inverse-decrease();
+            }
         }
         &-double{      
             @include np-shadow-double(); 
+        }
+        &-less{
+            @include np-shadow-decrease();
         }
         &-border-square{      
             @include np-shadow();
@@ -334,7 +369,11 @@ div{
         &:hover{ 
             @include np-shadow-inverse;  
             font-size: $text-decrease;
-        } 
+        }
+        &-less:hover{
+            @include np-shadow-inverse-decrease();  
+            font-size: $text-decrease;
+        }
     }
      
     &-hover-inverse{ 
@@ -343,6 +382,66 @@ div{
             @include np-shadow;  
             font-size: $text-increase; 
         } 
+        &-less:hover{
+            @include np-shadow-decrease();  
+            font-size: $text-increase; 
+        }
+    }
+
+    &-active{
+        transition: all $transition-time;
+
+        &-primary:active{
+            color: $primary !important;
+        }
+
+        &-accent:active{
+            color: $accent !important;
+        }
+
+        &-secondary:active{
+            color: $secondary !important;
+        }
+
+        &-warn:active{
+            color: $warn !important;
+        }
+
+        &-warning:active{
+            color: $warning !important;
+        }
+
+        &-success:active{
+            color: $success !important;
+        }
+    }
+
+    &-focus{
+        transition: all $transition-time;
+
+        &-primary:focus{
+            color: $primary !important;
+        }
+
+        &-accent:focus{
+            color: $accent !important;
+        }
+
+        &-secondary:focus{
+            color: $secondary !important;
+        }
+
+        &-warn:focus{
+            color: $warn !important;
+        }
+
+        &-warning:focus{
+            color: $warning !important;
+        }
+
+        &-success:focus{
+            color: $success !important;
+        }
     }
 
     /*=================
@@ -358,14 +457,8 @@ div{
         cursor: pointer;
 
         &:hover{ 
-            @include np-shadow-inverse;  
+            @include np-shadow-decrease;  
             font-size: $text-decrease;
-            color: $accent;
-        }
-        &:focus{ 
-            @include np-shadow-inverse;  
-            font-size: $text-decrease; 
-            color: $accent;
         }
     }
 
@@ -505,6 +598,7 @@ div{
                 position: relative;
                 overflow: hidden;
                 cursor: pointer;
+                transition: all $transition-time;
 
                 &::before {
                     @include basic-element;
@@ -522,7 +616,7 @@ div{
 
                 &:hover {
                     &::before {
-                        @include np-shadow-double();
+                        @include np-shadow-inverse-decrease();
                     }
                 }
             }
@@ -530,6 +624,30 @@ div{
             &:checked ~ label {
                 &::before {
                     @include np-shadow-inverse;
+                }
+
+                &.np-check-primary{
+                    color: $primary;
+                }
+
+                &.np-check-accent{
+                    color: $accent;
+                }
+
+                &.np-check-secondary{
+                    color: $secondary;
+                }
+
+                &.np-check-warn{
+                    color: $warn;
+                }
+
+                &.np-check-warning{
+                    color: $warning;
+                }
+
+                &.np-check-success{
+                    color: $success;
                 }
             }
         }
@@ -660,25 +778,25 @@ div{
         }
 
         &-primary{      
-            background: $primary; 
+            background: mix($primary, $background, $bg-mix); 
         }
         &-success{      
-            background: $success; 
+            background: mix($success, $background, $bg-mix);
         }
         &-accent{      
-            background: $accent; 
+            background: mix($accent, $background, $bg-mix);
         }
         &-warn{      
-            background: $warn; 
+            background: mix($warn, $background, $bg-mix); 
         }
         &-warning{      
-            background: $warning; 
+            background: mix($warning, $background, $bg-mix); 
         }
         &-info{      
-            background: $info; 
+            background: mix($info, $background, $bg-mix); 
         }
         &-secondary{      
-            background: $secondary; 
+            background: mix($secondary, $background, $bg-mix); 
         }
         &-dark{      
             background: $dark; 

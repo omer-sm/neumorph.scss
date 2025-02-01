@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Author" content="Chema Alfonso">
-    <title>Neumorph.scss</title>
-    <link id="cssLink" rel="stylesheet" href="./dist/css/dark/neumorph-full-dark.min.css">
+    <title>Neufork</title>
+    <link id="cssLink" rel="stylesheet" href="./dist/css/light/neumorph-full.min.css">
+    <link rel="shortcut icon" href="./src/assets/img/logo.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -15,8 +16,8 @@
             <div class="col-12">
                 <nav class="navbar navbar-expand-lg np-element fixed-top">
                     
-                    <a class="navbar-brand" target="_blank" target="_blank" href="https://chemaalfonso.com">
-                        <img src="./src/assets/img/logo.png" width="30" height="30" alt=""> Neumorph.scss
+                    <a class="navbar-brand" target="_blank" target="_blank" href="https://github.com/omer-sm">
+                        <img src="./src/assets/img/logo.png" width="30" height="30" alt=""> Neufork
                     </a>
                   
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -26,7 +27,7 @@
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Elements
                           </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <div class="dropdown-menu np-element px-0 np-shadow-less" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#Basics">Basics</a>
                             <a class="dropdown-item" href="#Shadows">Shadows</a>
                             <a class="dropdown-item" href="#Lists">Lists</a>
@@ -43,14 +44,16 @@
                         </li>
                           
                         <li class="nav-item">
-                          <a class="nav-link" target="_blank" href="https://github.com/ChemaAlfonso/neumorph.scss">Github</a>
+                          <a class="nav-link" target="_blank" href="https://github.com/omer-sm/neumorph.scss">Github</a>
                         </li>
                           
                         <li class="nav-item">
-                          <a class="nav-link" target="_blank" href="https://chemaalfonso.com">Chema Alfonso</a>
+                          <a class="nav-link" target="_blank" href="https://github.com/ChemaAlfonso/neumorph.scss">Neumorph.scss</a>
                         </li>
                         
                       </ul>
+
+                      <button class="nav-item np-btn np-square-md" id="themeToggler">🎨</button>
                       
                     </div>
                     
@@ -65,12 +68,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-12 mt-5 pt-5 py-sm-5 mb-sm-4">
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-end align-items-center">
-                        <button class="np-btn np-square-md" id="themeToggler">🎨</button>
-                    </div>
-                </div>
+            <div class="col-12 mt-4 pt-4 py-sm-4 mb-sm-2">
             </div>
 
             <div class="col-12 mb-5 pt-0 mt-0 pt-sm-4 mt-sm-4 d-flex justify-content-around align-items-center flex-wrap">
@@ -80,15 +78,15 @@
                 <div class="np-element np-hover np-circle-xxl np-shadow-border-circle-push mb-3 mr-3"></div>
             </div>
 
-            <div class="col-12 mb-4 mt-5">
+            <div class="col-12 mb-4 mt-0">
                 <div class="row">
                     <div class="col-12 np-element my-1">
-                        <h1 class="h3 np-element text-center mb-3">Neumorph.scss&nbsp;&nbsp;<small></small></h1>
+                        <h1 class="h3 np-element text-center mb-3">Neufork&nbsp;&nbsp;<small></small></h1>
                         <h2>Getting started</h2>
                         <div class="np-divider"></div>
-                        <p>Neumorph.scss is a <span class="np-text-accent">bundle of bootstrap 4 styles integrated with neumorphism.scss clases</span> to deal with <span class="np-text-accent">soft design</span>.</p>
-                        <p>It brings you a layer between bootstrap and your styles to do it easy.</p>
-                        <p class="text-right">Check on <strong><a class="np-text-accent" target="_blank" href="https://github.com/ChemaAlfonso/neumorph.scss">Github</a></strong></p>
+                        <p>Neufork is a <span class="np-text-accent">bundle of bootstrap 4 styles integrated with neumorphism.scss clases</span> to do <span class="np-text-accent">soft design</span>.</p>
+                        <p>It brings you a layer between bootstrap and your styles to do it easily.</p>
+                        <p class="text-right">Check it out on <strong><a class="np-text-accent" target="_blank" href="https://github.com/ChemaAlfonso/neumorph.scss">Github</a></strong></p>
                     </div>
                     <div class="col-12 np-element my-1">
                         <h2>Instalation</h2>
@@ -99,7 +97,7 @@
                     <div class="col-12 np-element my-1">
                         <h2>Variations</h2>
                         <div class="np-divider"></div>
-                        <p>Check diferent variations themes and choose what you need,<span class="np-text-accent"> Neumorph.scss with bootstrap _utilities & grid only</span> or with <span class="np-text-accent">full bootstrap styles</span>.</p>
+                        <p>Check diferent variations themes and choose what you need,<span class="np-text-accent"> Neufork with bootstrap _utilities & grid only</span> or with <span class="np-text-accent">full bootstrap styles</span>.</p>
                         <ul class="np-list">
                             <li class="np-list-element np-text-accent">Light theme</li>
                             <li class="np-list-element np-hover">neumorph.css</li>
@@ -155,24 +153,28 @@
                 <h3 class="np-table-heading mb-4 mb-md-2">Shadows</h3>
                 <p>Integrates an element with diferent shadows</p>
                 <div class="col-12 d-flex justify-content-center flex-wrap">
-                    <div class="np-element np-hover np-square-xxl np-shadow-double mb-3 mr-3"></div>
-                    <div class="np-element np-hover np-square-xxl np-shadow mx-3 mb-3 mr-3"></div>
-                    <div class="np-element np-hover-inverse np-square-xxl np-shadow-inverse mb-3 mr-3"></div>
-                    <div class="np-element np-hover np-square-xxl np-shadow-border-square mb-3 mr-3"></div>
-                    <div class="np-element np-hover np-square-xxl np-shadow-border-square-push mb-3 mr-3"></div>
-                    <div class="np-element np-hover np-circle-xxl np-shadow-border-circle mb-3 mr-3"></div>
-                    <div class="np-element np-hover np-circle-xxl np-shadow-border-circle-push mb-3 mr-3"></div>
+                    <div class="np-element np-hover np-square-xl np-shadow-double mb-3 mr-3"></div>
+                    <div class="np-element np-hover np-square-xl np-shadow mx-3 mb-3 mr-3"></div>
+                    <div class="np-element np-hover-less np-square-xl np-shadow-less mx-3 mb-3 mr-3"></div>
+                    <div class="np-element np-hover-inverse np-square-xl np-shadow-inverse mb-3 mr-3"></div>
+                    <div class="np-element np-hover-inverse-less np-square-xl np-shadow-inverse-less mb-3 mr-3"></div>
+                    <div class="np-element np-hover np-square-xl np-shadow-border-square mb-3 mr-3"></div>
+                    <div class="np-element np-hover np-square-xl np-shadow-border-square-push mb-3 mr-3"></div>
+                    <div class="np-element np-hover np-circle-xl np-shadow-border-circle mb-3 mr-3"></div>
+                    <div class="np-element np-hover np-circle-xl np-shadow-border-circle-push mb-3 mr-3"></div>
                 </div>
 <pre class="np-element mt-3">
     <span class="np-text-primary">Example:</span>
     
-    &#60;div class="np-element np-hover np-square-xxl np-shadow-double"&#62;&#60;/div&#62;
-    &#60;div class="np-element np-hover np-square-xxl np-shadow"&#62;&#60;/div&#62;
-    &#60;div class="np-element np-hover-inverse np-square-xxl np-shadow-inverse"&#62;&#60;/div&#62;
-    &#60;div class="np-element np-hover np-square-xxl np-shadow-border-square"&#62;&#60;/div&#62;
-    &#60;div class="np-element np-hover np-square-xxl np-shadow-border-square-push"&#62;&#60;/div&#62;
-    &#60;div class="np-element np-hover np-circle-xxl np-shadow-border-circle"&#62;&#60;/div&#62;
-    &#60;div class="np-element np-hover np-circle-xxl np-shadow-border-circle-push"&#62;&#60;/div&#62;
+    &lt;div class=&quot;np-element np-hover np-square-xl np-shadow-double mb-3 mr-3&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;np-element np-hover np-square-xl np-shadow mx-3 mb-3 mr-3&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;np-element np-hover-less np-square-xl np-shadow-less mx-3 mb-3 mr-3&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;np-element np-hover-inverse np-square-xl np-shadow-inverse mb-3 mr-3&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;np-element np-hover-inverse-less np-square-xl np-shadow-inverse-less mb-3 mr-3&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;np-element np-hover np-square-xl np-shadow-border-square mb-3 mr-3&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;np-element np-hover np-square-xl np-shadow-border-square-push mb-3 mr-3&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;np-element np-hover np-circle-xl np-shadow-border-circle mb-3 mr-3&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;np-element np-hover np-circle-xl np-shadow-border-circle-push mb-3 mr-3&quot;&gt;&lt;/div&gt;
 </pre>
             </div>
 
@@ -262,7 +264,7 @@
                 <div class="row">
                     <div class="col-12 d-flex justify-content-around">
                         <button class="np-btn">+</button>
-                        <button class="np-btn np-square-md">+</button>
+                        <button class="np-btn np-square-md np-active-primary">+</button>
                         <button class="np-btn np-circle-md">+</button>
                     </div>
                 </div>
@@ -270,7 +272,7 @@
     <span class="np-text-primary">Example:</span>
 
     &#60;button class="np-btn"&#62;+&#60;/button&#62;
-    &#60;button class="np-btn np-square-sm"&#62;+&#60;/button&#62;
+    &#60;button class="np-btn np-square-sm np-active-primary"&#62;+&#60;/button&#62;
     &#60;button class="np-btn np-circle-sm"&#62;+&#60;/button&#62;
 </pre>
             </div>
@@ -338,7 +340,7 @@
 
                 <div class="np-form-group">
                     <label for="np-element">Label</label>
-                    <textarea rows="6" class="np-form-element np-text-accent" value="Value"></textarea>
+                    <textarea rows="6" class="np-form-element np-text-accent np-focus-primary" value="Value"></textarea>
                 </div>
 
                 <div class="np-form-group">
@@ -363,7 +365,7 @@
                     <div class="row">
                         <span>
                             <input type="checkbox" id="myCheck" name="myCheckField" class="np-form-check">
-                            <label for="myCheck" class="np-form-check-label">I love it</label>
+                            <label for="myCheck" class="np-form-check-label np-check-warn">I love it</label>
                         </span>
                         
                         <span>
@@ -383,7 +385,7 @@
                     <div class="row">
                         <span>
                             <input type="radio" id="myCheckRadio" name="myCheckFieldRadio" class="np-form-check">
-                            <label for="myCheckRadio" class="np-form-check-label">I love it</label>
+                            <label for="myCheckRadio" class="np-form-check-label np-check-warn">I love it</label>
                         </span>
                         
                         <span>
@@ -404,7 +406,7 @@
     <span class="np-text-success">Basic</span>
     &#60;div class="np-form-group"&#62;
         &#60;label for="np-element"&#62;Label&#60;/label&#62;
-        &#60;input type="text" class="np-form-element np-text-accent" value=".np-form-group &#62; .np-form-element"&#62;
+        &#60;input type="text" class="np-form-element np-text-accent np-focus-primary" value=".np-form-group &#62; .np-form-element"&#62;
     &#60;/div&#62;
 
     <span class="np-text-success">Basic placeholder</span>
@@ -433,13 +435,13 @@
     <span class="np-text-success">Checkbox</span>
     &#60;span&#62;
         &#60;input type="checkbox" id="myCheck" name="myCheck" class="np-form-check"&#62;
-        &#60;label for="myCheck" class="np-form-check-label"&#62;I love it&#60;/label&#62;
+        &#60;label for="myCheck" class="np-form-check-label np-check-warn"&#62;I love it&#60;/label&#62;
     &#60;/span&#62;
 
     <span class="np-text-success">Radio</span>
     &#60;span&#62;
         &#60;input type="radio" id="myCheck" name="myCheck" class="np-form-check"&#62;
-        &#60;label for="myCheck" class="np-form-check-label"&#62;I love it&#60;/label&#62;
+        &#60;label for="myCheck" class="np-form-check-label np-check-warn"&#62;I love it&#60;/label&#62;
     &#60;/span&#62;
 </pre>
 

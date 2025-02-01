@@ -37,8 +37,22 @@
     box-shadow: 6px 6px 16px 0px $shadow, -6px -6px 16px 0px $shadow-light, inset 0px 0px 0px 0px $shadow, inset  0px 0px 0px 0px $shadow-light;
 }
 
+@mixin np-shadow-decrease {
+    $a: 6px * $shadow-decrease-factor;
+    $b: -$a;
+    $blur: 16px * $shadow-decrease-factor;
+    box-shadow: $a $a $blur 0px $shadow, $b $b $blur 0px $shadow-light, inset 0px 0px 0px 0px $shadow, inset  0px 0px 0px 0px $shadow-light;
+}
+
 @mixin np-shadow-inverse {
     box-shadow: 0px 0px 0px 0px $shadow, 0px 0px 0px 0px $shadow-light, inset 6px 6px 16px 0px $shadow, inset  -6px -6px 16px 0px $shadow-light;
+}
+
+@mixin np-shadow-inverse-decrease {
+    $a: 6px * $shadow-decrease-factor;
+    $b: -$a;
+    $blur: 16px * $shadow-decrease-factor;
+    box-shadow: 0px 0px 0px 0px $shadow, inset  0px 0px 0px 0px $shadow-light, inset $a $a $blur 0px $shadow, inset $b $b $blur 0px $shadow-light;
 }
 
 @mixin np-shadow-double {
@@ -104,32 +118,43 @@ button.np-btn:focus,
 .np-circle-md:focus,
 .np-circle-lg:focus,
 .np-circle-xl:focus,
-.np-circle-xxl:focus {
-    outline: none;
-    @include np-shadow-inverse; 
-}
-
-button.np-btn:focus,
-.np-btn:focus,
-.np-square-sm:focus,
-.np-square-md:focus,
-.np-square-lg:focus,
-.np-square-xl:focus,
-.np-square-xxl:focus,
-.np-circle-sm:focus,
-.np-circle-md:focus,
-.np-circle-lg:focus,
-.np-circle-xl:focus,
-.np-circle-xxl:focus {
-    font-size: $text-decrease;
-}
-
+.np-circle-xxl:focus,
 .np-shadow-inverse:focus {
     outline: none;
-    @include np-shadow; 
-    font-size: $text-increase;
 }
 
+input.np-element:focus,
+select.np-element:focus,
+textarea.np-element:focus,
+textarea.np-form-element:focus,
+input.np-form-element:focus,
+select.np-form-element:focus {
+    @include np-shadow-inverse; 
+    color: $accent;
+}
+
+button.np-btn:active,
+.np-btn:active,
+.np-square-sm:active,
+.np-square-md:active,
+.np-square-lg:active,
+.np-square-xl:active,
+.np-square-xxl:active,
+.np-circle-sm:active,
+.np-circle-md:active,
+.np-circle-lg:active,
+.np-circle-xl:active,
+.np-circle-xxl:active {
+    font-size: $text-decrease;
+    @include np-shadow-inverse; 
+    color: $accent;
+}
+
+.np-shadow-inverse:active {
+    @include np-shadow; 
+    font-size: $text-increase;
+    color: $accent;
+}
 
 /*========================
  General
@@ -173,7 +198,7 @@ a{
         padding-top: 0;
         transition: all $transition-time;
         &:hover{
-            @include np-shadow-inverse;
+            @include np-shadow-inverse-decrease;
             color: $accent;
             background: $background;
         }
@@ -358,14 +383,8 @@ div{
         cursor: pointer;
 
         &:hover{ 
-            @include np-shadow-inverse;  
+            @include np-shadow-decrease;  
             font-size: $text-decrease;
-            color: $accent;
-        }
-        &:focus{ 
-            @include np-shadow-inverse;  
-            font-size: $text-decrease; 
-            color: $accent;
         }
     }
 
@@ -522,7 +541,7 @@ div{
 
                 &:hover {
                     &::before {
-                        @include np-shadow-double();
+                        @include np-shadow-double;
                     }
                 }
             }

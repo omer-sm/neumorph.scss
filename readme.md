@@ -18,6 +18,19 @@ Neumorphed.scss brings you a layer you can use between bootstrap and your styles
 
 You only need to **import one of the variations** stylesheets on your project or **compile your own** and start writting clases at html elements, like you usually do with bootstrap.
 
+Alternatively, you may use [jsDeliver](https://cdn.jsdelivr.net/gh/omer-sm/neumorph.scss@master/dist/css/) to import without downloading:
+
+```html
+<!-- Dark (Full) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/omer-sm/neumorph.scss@master/dist/css/dark/neumorph-full-dark.min.css">
+<!-- Dark (Basic) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/omer-sm/neumorph.scss@master/dist/css/dark/neumorph-dark.min.css">
+<!-- Light (Full) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/omer-sm/neumorph.scss@master/dist/css/light/neumorph-full.min.css">
+<!-- Light (Basic) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/omer-sm/neumorph.scss@master/dist/css/light/neumorph.min.css">
+```
+
 ----
 ## Variations
 Check **Dark and Light** themes and choose what you need, Neumorph.scss with bootstrap _utilities & grid only or with full bootstrap styles.
